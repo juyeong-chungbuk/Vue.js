@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <router-link to="/list"><a class="nav-link active" aria-current="page" href="#">Home</a></router-link>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Features</a>
@@ -25,15 +25,16 @@
   </div>
 </nav>
 </div>
-<div class="container mt-4">
-  <h4>React개발자 주영</h4>
-  <p>Vue로 만듦</p>
+<router-link to="/list">리스트페이지</router-link>
+<router-link to="/home">홈페이지</router-link>
+<div class="mt-4">
+  <router-view :blog="bloglist"></router-view>
 </div>
-  <List :blog="bloglist[i]" v-for="(blog, i) in bloglist" :key="i"/>
+  <!-- <List :blog="bloglist[i]" v-for="(blog, i) in bloglist" :key="i"/> -->
 </template>
 
 <script>
-import List from './components/List.vue';
+// import List from './components/List.vue';
 import data from './assets/blog';
 
 export default {
@@ -44,7 +45,7 @@ export default {
     }
   },
   components: {
-    List: List,
+    // List: List,
   }
 }
 </script>
