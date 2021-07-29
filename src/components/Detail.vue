@@ -8,6 +8,7 @@
       <h5>{{blog[$route.params.id].title}}</h5>
       <p>{{blog[$route.params.id].content}}</p>
       <p>{{blog[$route.params.id].date}}</p>
+      <router-view></router-view>
   </div>
 </template>
 
